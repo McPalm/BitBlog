@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import HomeCard from "./HomeCard";
 
-export class Home extends Component {
-  static displayName = Home.name;
-
+export class Test extends Component {
   state = {};
   render() {
     const bawx = <div class="d-none d-lg-block" style={{ height: "20vh" }} />;

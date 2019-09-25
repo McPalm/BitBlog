@@ -1,0 +1,5 @@
+.paralax {
+  background-image: url("/background.png");
+  background-size: 100% auto;
+  min-height: 100vh;
+}
