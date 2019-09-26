@@ -8,7 +8,7 @@ export class Layout extends Component {
 
   render() {
     return (
-      <div class="paralax">
+      <div className="paralax">
         <NavMenu />
         <Container>{this.props.children}</Container>
       </div>

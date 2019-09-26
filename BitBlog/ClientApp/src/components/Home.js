@@ -6,7 +6,9 @@ export class Home extends Component {
 
   state = {};
   render() {
-    const bawx = <div class="d-none d-lg-block" style={{ height: "20vh" }} />;
+    const bawx = (
+      <div className="d-none d-lg-block" style={{ height: "20vh" }} />
+    );
     return (
       <div>
         <HomeCard

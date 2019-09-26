@@ -9,18 +9,18 @@ const HomeCard = props => {
 
   return (
     <div className={layoutClass}>
-      <div class="text-center">
+      <div className="text-center">
         <img
-          class="card-image col-12 col-sm-8 col-md-6 col-lg-12 img-responsive"
+          className="card-image col-12 col-sm-8 col-md-6 col-lg-12 img-responsive"
           src={props.imagesrc}
           alt={props.name}
         />
       </div>
-      <div class="card-body col-lg-4">
-        <h3 class="card-title">{props.name}</h3>
-        <p class="card-text">{props.body}</p>
-        <div class="text-center">
-          <p class="fake-link">read more →</p>
+      <div className="card-body col-lg-4">
+        <h3 className="card-title">{props.name}</h3>
+        <p className="card-text">{props.body}</p>
+        <div className="text-center">
+          <p className="fake-link">read more →</p>
         </div>
       </div>
     </div>
