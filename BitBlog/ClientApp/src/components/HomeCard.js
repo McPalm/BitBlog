@@ -2,7 +2,7 @@ import React from "react";
 import "./HomeCard.css";
 
 const HomeCard = props => {
-  let layoutClass = "home-card my-5 justify-content-around d-lg-flex";
+  let layoutClass = "home-card justify-content-around d-lg-flex";
   if (props.inverse) {
     layoutClass += " d-lg-flex flex-row-reverse";
   }
