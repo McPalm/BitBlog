@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() });
 describe("<CardSequence />", () => {
   it("should have no cards if none are sent in.", () => {
     const wrapper = shallow(<CardSequence />);
-    expect(wrapper.find(<HomeCard />)).toHaveLength(0);
+    expect(wrapper.find(HomeCard)).toHaveLength(0);
   });
 
   it("should have no three cards if three are sent in.", () => {
@@ -18,6 +18,6 @@ describe("<CardSequence />", () => {
     cards.push(<HomeCard />);
     cards.push(<HomeCard />);
     const wrapper = shallow(<CardSequence cards={cards} />);
-    expect(wrapper.find(<HomeCard />)).toHaveLength(3);
+    expect(wrapper.find(HomeCard)).toHaveLength(3);
   });
 });
