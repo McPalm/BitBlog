@@ -9,7 +9,7 @@ export class Layout extends Component {
 
   render() {
     return (
-      <div className="paralax">
+      <div className="paralax hackingfootersin2019">
         <NavMenu />
         <Container>{this.props.children}</Container>
         <Footer />
