@@ -8,7 +8,9 @@ export class FetchData extends Component {
     this.state = { forecasts: [], loading: true };
 
     fetch('api/SampleData/WeatherForecasts')
-      .then(response => response.json())
+      .then(response => {
+        return response.json()
+      })
       .then(data => {
         this.setState({ forecasts: data, loading: false });
       });

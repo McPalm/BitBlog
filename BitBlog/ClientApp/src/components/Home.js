@@ -6,38 +6,31 @@ export class Home extends Component {
   static displayName = Home.name;
 
   state = {};
+  constructor(props) {
+    super(props);
+    this.state = { cards: [], loading: true };
+    console.log("Hello");
+    fetch('api/Home/FrontpageEntries')
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        this.setState({ cards: data, loading: false });
+      });
+  }
+
   render() {
     const cards = [];
-    cards.push(
-      <HomeCard
-        name="Card 1"
-        imagesrc="/default.gif"
-        body="Remove rows or columns by specifying label names and corresponding axis, or by specifying directly index or column names. When using a multi-index, labels on different levels can be removed by specifying the level."
-      />
-    );
-    cards.push(
-      <HomeCard
-        name="Card 2"
-        imagesrc="/default.gif"
-        body="here is some text for you"
-        inverse="true"
-      />
-    );
-    cards.push(
-      <HomeCard
-        name="Card 3"
-        imagesrc="/default.gif"
-        body="here is some text for you"
-      />
-    );
-    cards.push(
-      <HomeCard
-        name="Card 4"
-        imagesrc="/default.gif"
-        body="here is some text for you"
-        inverse="true"
-      />
-    );
+    this.state.cards.map((entry, index) => {
+      cards.push(
+        <HomeCard
+          name={entry.name}
+          imagesrc={entry.imageSource}
+          body={entry.body}
+          inverse={index%2 === 1}
+        />
+      )
+    });
 
     return (
       <div className="pb-5">

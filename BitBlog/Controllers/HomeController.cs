@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BitBlog.Controllers
 {
-    [Route("api/home")]
+    [Route("api/[controller]")]
     public class HomeController : Controller
     {
         public ContentContext _db { get; }
@@ -17,7 +17,7 @@ namespace BitBlog.Controllers
             _db = contentContext;
         }
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public IEnumerable<FrontpageEntry> FrontpageEntries()
         {
             return _db.FrontpageEntries;
