@@ -9,7 +9,6 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { cards: [], loading: true };
-    console.log("Hello");
     fetch('api/Home/FrontpageEntries')
       .then(response => {
         return response.json();

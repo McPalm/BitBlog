@@ -24,9 +24,9 @@ namespace BitBlog.Controllers
         }
 
         [HttpGet("[action]")]
-        public IActionResult ComposeNewPost()
+        public IEnumerable<BlogPost> BlogPosts()
         {
-            return View();
+            return _db.BlogPosts.Take(5);
         }
     }
 }
