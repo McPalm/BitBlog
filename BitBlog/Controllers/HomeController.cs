@@ -22,5 +22,11 @@ namespace BitBlog.Controllers
         {
             return _db.FrontpageEntries;
         }
+
+        [HttpGet("[action]")]
+        public IActionResult ComposeNewPost()
+        {
+            return View();
+        }
     }
 }
