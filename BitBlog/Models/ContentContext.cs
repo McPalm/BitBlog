@@ -15,5 +15,6 @@ namespace BitBlog.Models
         }
 
         public DbSet<FrontpageEntry> FrontpageEntries { get; set; }
+        public DbSet<BlogPost> BlogPosts { get; set; }
     }
 }
