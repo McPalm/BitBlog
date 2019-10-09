@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model BitBlog.Pages.Blog.IndexModel
 
 @{
@@ -10,34 +10,51 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" style="table-layout: fixed">
     <thead>
         <tr>
-            <th>
+            <th style="width: 12%">
                 @Html.DisplayNameFor(model => model.BlogPost[0].Title)
             </th>
-            <th>
+            <th style="width: 18%">
                 @Html.DisplayNameFor(model => model.BlogPost[0].ImageUrl)
             </th>
-            <th>
+            <th style="width: 45%">
                 @Html.DisplayNameFor(model => model.BlogPost[0].Article)
             </th>
-            <th></th>
+            <th style="width: 25%"></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.BlogPost) {
         <tr>
-            <td>
+            <td style="overflow-wrap: break-word">
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
+            <td style="overflow-wrap: break-word">
+                <a href=@item.ImageUrl>
+                @if (item.ImageUrl.Length < 55)
+                {
+                    @item.ImageUrl
+                }
+                else
+                {
+                    @(item.ImageUrl.Substring(0, 50) + "...")
+                }
+                    </a>
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Article)
+            <td style="overflow-wrap: break-word">
+                @if(item.Article.Length < 100)
+                {
+                    @item.Article
+                }
+                else
+                {
+                    @(item.Article.Substring(0, 80)+"...")
+                }
+
             </td>
-            <td>
+            <td style="overflow-wrap: break-word">
                 <a asp-page="./Edit" asp-route-id="@item.Key">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Key">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Key">Delete</a>
