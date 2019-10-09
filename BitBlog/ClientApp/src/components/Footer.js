@@ -14,7 +14,7 @@ const Footer = props => {
           </a>
         </div>
         <div>
-          <span>&copy; Bit Assembly 2019</span>
+          <span>&copy; Bit Assembly 2019. Crafted with Contempt</span>
         </div>
       </div>
     </footer>
